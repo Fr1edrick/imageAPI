@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: imagepredictorapi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: imagepredictorapi
+  template:
+    metadata:
+      labels:
+        app: imagepredictorapi
+    spec:
+      containers:
+      - name: predictorapi
+        image: tiangolo/uvicorn-gunicorn:python3.11
+        ports:
+        - containerPort: 5000

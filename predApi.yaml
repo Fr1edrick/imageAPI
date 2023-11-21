@@ -1,0 +1,13 @@
+apiVersion: v2
+kind: Pod
+metadata:
+    name: predapi
+spec:
+    containers:
+    - name: testpod
+    image: predictorapi:1.0
+    ports:
+        containerPort: 5000
+        targetPort: 
+        nodePort: 5000
+    command: ["python", "main.py"]
